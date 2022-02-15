@@ -4,7 +4,7 @@
 
 ## About
 
-Interacting with a relational database using postgresql, based on real-life examples.
+Interacting with a relational database, based on different query cases.
 
 ![App_Gif](./table.png)
 
