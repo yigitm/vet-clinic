@@ -4,9 +4,20 @@
 
 ## About
 
-Interacting with a relational database, based on different query cases.
+Interacting with a relational database using postgresql with case based query examples.
 
-![App_Gif](./table.png)
+
+### Animals Table
+
+![Animals Table](images/animals.png)
+
+### Owners Table
+
+![Owners Table](images/owners.png)
+
+### Species Table
+
+![Species Table](images/species.png)
 
 ## Tools
 
