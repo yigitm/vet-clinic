@@ -6,7 +6,6 @@
 
 Interacting with a relational database using postgresql with case based query examples.
 
-
 ### Animals Table
 
 ![Animals Table](images/animals.png)
@@ -18,6 +17,18 @@ Interacting with a relational database using postgresql with case based query ex
 ### Species Table
 
 ![Species Table](images/species.png)
+
+### Vets Table
+
+![Vets Table](images/vets.png)
+
+### Visits Table
+
+![Visits Table](images/visits.png)
+
+### Specializations Table
+
+![Specializations Table](images/specializations.png)
 
 ## Tools
 
