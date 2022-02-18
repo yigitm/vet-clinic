@@ -6,6 +6,7 @@
 
 Interacting with a relational database using postgresql with case based query examples.
 
+
 ### Animals Table
 
 ![Animals Table](images/animals.png)
