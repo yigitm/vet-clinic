@@ -95,7 +95,8 @@ FROM vets
 JOIN visits 
 ON visits.vets_id = vets.id 
 WHERE vets.id NOT IN (
-  SELECT vets_id FROM specializations
+  SELECT vets_id FROM specializations OR 
+  SELECT vets_id FROM  animals JOIN specializations ON animals.species_id = specializations.vets_id)
 )
 GROUP BY vets.id, vets.name;
 
@@ -112,3 +113,29 @@ WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name, species.name, vets.name
 ORDER BY COUNT(species.name) DESC LIMIT 1;
 
+
+
+SELECT COUNT(vets_id), vets.name
+FROM vets
+JOIN visits
+ON visits.vets_id = vets.id
+AND vets.id NOT IN (
+  SELECT vets_id FROM specializations
+)
+OR vets.id IN (
+ SELECT specializations.vets_id FROM visits 
+ left JOIN animals ON animals.id = visits.animals_id
+ JOIN specializations ON specializations.vets_id = visits.vets_id
+ WHERE specializations.species_id <> animals.species_id 
+ AND specializations.vets_id <> 3
+)
+GROUP BY vets.id, vets.name;
+
+ SELECT visits.vets_id, name, animals.species_id, specializations.species_id, specializations.vets_id FROM visits 
+ JOIN animals ON animals.id = visits.animals_id
+ JOIN specializations ON specializations.vets_id = visits.vets_id
+ WHERE specializations.species_id <> animals.species_id 
+ AND specializations.vets_id <> 3 
+ AND visits.vets_id NOT IN (
+   SELECT vets_id FROM specializations
+ )
